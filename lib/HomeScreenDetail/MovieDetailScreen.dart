@@ -24,7 +24,7 @@ class MovieDetailsScreen extends StatelessWidget {
         .arguments as Movie;
     return Scaffold(
       appBar: AppBar(
-        title: Text(args.title ?? 'Movie Details'), // Use movie title
+        title: Text(args.title ?? 'Movie Details'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -35,10 +35,10 @@ class MovieDetailsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            MoviePoster(), // Display the movie poster
-            MovieDetails(), // Display movie details
-            MovieRating(), // Display movie rating
-            MoreLikeThis(), // Display more similar movies
+            MoviePoster(),
+            MovieDetails(),
+            MovieRating(),
+            MoreLikeThis(),
           ],
         ),
       ),

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 class MoreLikeThis extends StatelessWidget {
   final List<String> similarMovies = [
-    'Deadpool 2', // Replace with actual movie data
-    // Add more movie titles or data
+    '####',
   ];
 
   @override
@@ -22,7 +21,6 @@ class MoreLikeThis extends StatelessWidget {
               children: [
                 Image.network(
                   'https://link_to_movie_poster.jpg',
-                  // Replace with actual image URL
                   height: 140,
                   fit: BoxFit.cover,
                 ),

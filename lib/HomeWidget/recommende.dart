@@ -18,8 +18,7 @@ class _RecommendedState extends State<Recommended> {
   @override
   void initState() {
     super.initState();
-    recommendedMovies =
-        ApiManager.getTopRatedMovies(); // Fetch recommended movies from API
+    recommendedMovies = ApiManager.getTopRatedMovies();
   }
 
   @override
