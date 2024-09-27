@@ -14,12 +14,12 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
-  late Future<List<Movie>> popularMovies; // Declare it here
+  late Future<List<Movie>> popularMovies;
 
   @override
   void initState() {
-    super.initState(); // Call the superclass's initState
-    popularMovies = ApiManager.getPopularMovies(); // Initialize the future
+    super.initState();
+    popularMovies = ApiManager.getPopularMovies();
     // topRatedMovies = Api().getTopRatedMovies();
     // upcomingMovies = Api().getUpcomingMovies();
   }

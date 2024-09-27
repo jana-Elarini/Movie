@@ -27,21 +27,21 @@ class BottomNavBar extends StatelessWidget {
           onTap: onItemTapped,
           items: [
             BottomNavigationBarItem(
-              icon: bottomNavIcon(assetImage: "lib/images/Home icon (1).png"),
+              icon: bottomNavIcon(assetImage: "assets/images/Home icon .png"),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: bottomNavIcon(assetImage: "lib/images/search-2.png"),
+              icon: bottomNavIcon(assetImage: "assets/images/search-2.png"),
               label: "Search",
             ),
             BottomNavigationBarItem(
               icon: bottomNavIcon(
-                  assetImage: "lib/images/Icon ionic-md-bookmarks.png"),
+                  assetImage: "assets/images/Icon ionic-md-bookmarks.png"),
               label: "Browse",
             ),
             BottomNavigationBarItem(
               icon: bottomNavIcon(
-                  assetImage: "lib/images/Icon material-movie.png"),
+                  assetImage: "assets/images/Icon material-movie.png"),
               label: "WatchList",
             ),
           ],

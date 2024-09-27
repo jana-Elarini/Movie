@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:moviedetails/response/genres_response.dart';
+import 'package:moviedetails/response/movelist_response.dart';
 
 import '../model/category.dart';
 import '../response/MovieDetailResponse.dart';
@@ -14,6 +16,9 @@ class ApiManager {
 
   static const upcomingUrl =
       'https://api.themoviedb.org/3/movie/upcoming?api_key=${Constants.apiKey}';
+
+  static const genreUrl =
+      'https://api.themoviedb.org/3/genre/movie/list?api_key=${Constants.apiKey}&language=en-US';
 
   static Future<List<Movie>> getPopularMovies() async {
     final response = await http.get(Uri.parse(popularUrl));
@@ -61,6 +66,35 @@ class ApiManager {
     } catch (e) {
       print(e);
       throw e;
+    }
+  }
+
+  static Future<GenresResponse> getCategoryResponse() async {
+    final response = await http.get(Uri.parse(genreUrl));
+    print("Fetching genres: ${response.request?.url}");
+    if (response.statusCode == 200) {
+      print("Genres fetched successfully.");
+      return GenresResponse.fromJson(json.decode(response.body));
+    } else {
+      print("Failed to fetch genres with status code: ${response.statusCode}");
+      throw Exception('Failed to load genres');
+    }
+  }
+
+  static Future<MovielistResponse> discoverMovieByCategoryResponse({
+    required String pageNo,
+    required String categoryId,
+  }) async {
+    final String url =
+        Constants.getDiscoverMovieUrl(genreId: categoryId, pageNo: pageNo);
+    final response = await http.get(Uri.parse(url));
+    print("Fetching movies for genre $categoryId: $url");
+    if (response.statusCode == 200) {
+      print("Movies fetched successfully for genre $categoryId.");
+      return MovielistResponse.fromJson(json.decode(response.body));
+    } else {
+      print("Failed to fetch movies with status code: ${response.statusCode}");
+      throw Exception('Failed to load movies by category');
     }
   }
 }

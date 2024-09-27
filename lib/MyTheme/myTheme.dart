@@ -15,7 +15,7 @@ class MyTheme {
 
   static Color bottomNavigationBackgroundColor = const Color(0xff1A1A1A);
 
-  static ThemeData lightTheme = ThemeData(
+  static ThemeData AppTheme = ThemeData(
       cardColor: const Color(0xff343534),
       primaryColor: yellowColor,
       scaffoldBackgroundColor: blackColor,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:moviedetails/HomeScreenDetail/MovieDetailScreen.dart';
+import 'package:moviedetails/model/category.dart';
 
 import 'bottom_navy_bar.dart';
-import 'browseWidget.dart';
+import '../browse/browseWidget.dart';
 import 'homeWidget.dart';
 import 'search.dart';
 import 'watchList.dart';
@@ -26,6 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
     BrowseWidget(),
     WatchListWidget(),
   ];
+
+  void navigateToMovieDetails(Movie movie) {
+    Navigator.pushNamed(
+      context,
+      MovieDetailsScreen.routeName,
+      arguments: movie,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

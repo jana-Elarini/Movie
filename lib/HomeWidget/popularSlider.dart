@@ -18,7 +18,7 @@ class _PopularSliderState extends State<PopularSlider> {
   @override
   void initState() {
     super.initState();
-    popularMovies = ApiManager.getPopularMovies(); // Fetch popular movies
+    popularMovies = ApiManager.getPopularMovies();
   }
 
   @override

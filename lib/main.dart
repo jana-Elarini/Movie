@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:moviedetails/HomeScreenDetail/MovieDetailScreen.dart';
+import 'package:moviedetails/HomeWidget/Home_screen.dart';
+import 'package:moviedetails/MyTheme/myTheme.dart';
+import 'package:moviedetails/browse/browseWidget.dart';
+import 'package:moviedetails/browse/movieCategoryItem.dart';
 
-import 'HomeWidget/Home_screen.dart';
-import 'MyTheme/myTheme.dart';
+import 'HomeScreenDetail/MovieDetailScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,14 +16,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Movies App',
       initialRoute: HomeScreen.routeName,
       routes: {
-        // Define your routes here if needed
         HomeScreen.routeName: (context) => HomeScreen(),
-        MovieDetailsScreen.routeName: (context) => MovieDetailsScreen()
+        BrowseWidget.routeName: (context) => BrowseWidget(),
+        MovieCategoryItem.routeName: (context) => MovieCategoryItem(),
+        MovieDetailsScreen.routeName: (context) => MovieDetailsScreen(),
       },
       debugShowCheckedModeBanner: false,
-      theme: MyTheme.lightTheme,
+      theme: MyTheme.AppTheme,
     );
   }
 }
